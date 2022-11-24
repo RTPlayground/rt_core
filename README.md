@@ -5,6 +5,31 @@
 - [``rt_core`` abstract](https://github.com/RTPlayground/rt_core/blob/main/etc/abstract/abstract.pdf): High level design and objective.
 - [scripts/](https://github.com/RTPlayground/rt_core/blob/main/scripts): Top-level scripts
 
+## Usage
+
+``rt_core`` can be used as an API as follows.
+```python
+import rt_core
+
+class YourEnv(rt_core.Env): # inherit rt_core.Env
+# Failure to define important functions will raise an error (or a warning) upon creating an instance of the class
+    def ...
+
+class YourTask(rt_core.Task): # inherit rt_core.Task
+    def ...
+
+interface = Interface(env=YourEnv(), task=YourTask()) 
+
+# Use openAI gym-like functionalities
+interface.reset()
+interface.step()
+interface.render()
+interface.state # return state
+interface.obs # return observations
+interface.close()
+interface.log() # centralized logger
+```
+
 ## Install
 
 ```console
