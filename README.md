@@ -18,3 +18,12 @@ pip3 install .
 ```console
 pip3 uninstall rt_core
 ```
+
+## Ignore Warnings
+
+Warnings are meant to guide environment/task developers in fully implementing the environment (according to OpenAI Gym's Env standards), however if you would like to ignore the warnings you can add the following lines to your python script.
+
+```python
+import warnings
+warnings.simplefilter('ignore')
+```
