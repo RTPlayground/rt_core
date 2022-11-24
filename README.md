@@ -12,3 +12,9 @@ git clone https://github.com/RTPlayground/rt_core
 cd rt_core
 pip3 install .
 ```
+
+## Uninstall
+
+```console
+pip3 uninstall rt_core
+```

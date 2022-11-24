@@ -1,26 +1,27 @@
 import wandb
+import warnings
 
 class Interface:
     def __init__(self, env, task):
         self.env = env
         self.task = task
 
-#        if hasattr(env, "action_space"):
-#            self.action_space = self.env.action_space
-#        else:
-#            raise Warning(f"action_space not declared in the Environment Module ({env}).")
-#        if hasattr(env, "observation_space"):
-#            self.observation_space = self.env.observation_space
-#        else:
-#            raise Warning(f"observation_space not declared in the Environment Module ({env}).")
-#        if hasattr(env, "state"):
-#            pass
-#        else:
-#            raise Warning(f"state variable not declared in the Environment Module ({env}).")
-#        if hasattr(task, "reward_range"):
-#            self.reward_range = self.task.reward_range
-#        else:
-#            raise Warning(f"reward_range not declared in the Task Module ({task}).")
+        if hasattr(env, "action_space"):
+            self.action_space = self.env.action_space
+        else:
+            warnings.warn(f"action_space not declared in the Environment Module ({env}).", RuntimeWarning)
+        if hasattr(env, "observation_space"):
+            self.observation_space = self.env.observation_space
+        else:
+            warnings.warn(f"observation_space not declared in the Environment Module ({env}).", RuntimeWarning)
+        if hasattr(env, "state"):
+            pass
+        else:
+            warnings.warn(f"state variable not declared in the Environment Module ({env}).", RuntimeWarning)
+        if hasattr(task, "reward_range"):
+            self.reward_range = self.task.reward_range
+        else:
+            warnings.warn(f"reward_range not declared in the Task Module ({task}).", RuntimeWarning)
 
     @property
     def state(self):
