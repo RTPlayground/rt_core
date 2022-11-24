@@ -6,6 +6,15 @@ class Env(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def get_obs(self):
+    def reset(self, action):
         pass
+
+    def close(self):
+        raise NotImplementedError()
+
+    def get_obs(self):
+        raise NotImplementedError()
+
+    def render(self):
+        raise NotImplementedError()
 
