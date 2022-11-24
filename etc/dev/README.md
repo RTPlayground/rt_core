@@ -1,3 +1,0 @@
-# Developer principles and guidelines
-
-
