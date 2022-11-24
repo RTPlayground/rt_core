@@ -9,7 +9,6 @@ setup(
     scripts=[],
     description='rt_core is the core Python library of RTPlayground that provides an OpenAI-like external API for interacting with real world and simulated robots. It also provides a centralized logging API for easy comparison between algorithms.',
     install_requires=[
-       "gym",
        "wandb",
     ],
 )

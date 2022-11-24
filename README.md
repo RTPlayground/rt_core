@@ -6,4 +6,3 @@
 - [``rt_core`` design](https://github.com/RTPlayground/rt_core/blob/main/etc/design): Detailed implementation design.
 - [``rt_core`` dev](https://github.com/RTPlayground/rt_core/blob/main/etc/dev): Developer principles and guidelines.
 - [scripts/](https://github.com/RTPlayground/rt_core/blob/main/scripts): Top-level scripts
-- [CHANGES.md](https://github.com/RTPlayground/rt_core/blob/main/CHANGES.md): Log of changes
