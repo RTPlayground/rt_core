@@ -1,4 +1,4 @@
-% pdflatex abstract.tex && rm *.aux *.bbl *.blg *.log *.out
+% pdflatex abstract.tex && rm *.aux *.log *.out
 
 \documentclass{article}
 \usepackage{geometry}
@@ -36,7 +36,7 @@ The diagram below illustrates the connection between the various components of t
     \centering
     \begin{tikzpicture}[square/.style={rounded corners,regular polygon,regular polygon sides=4, draw,thick}, rect/.style={rounded corners, rectangle, draw,thick, text width = 5em, align=center, minimum height=2em}]
 
-        \node[rect, very thick, fill = purple!20] (manager) {Manager};
+        \node[rect, very thick, fill = purple!20] (manager) {Interface};
         \node[rect, below=of manager, very thick, fill = cyan!20] (task) {Task};
         \node[rect, below left= of task, very thick, fill = teal!20] (driver) {Com.};
         \node[rect, below right = of task, very thick, fill = teal!20] (sim) {Simulator};
@@ -71,7 +71,7 @@ The diagram below illustrates the connection between the various components of t
 \subsection{\texttt{rt\_core}: Components and APIs}
 
 \begin{itemize}[nolistsep]
-    \item \textbf{Manager Module}: Orchestrates the flow of information from the task and environment modules to the external modules. The manager also provides an interface for a centralized logging system that allow comparison between multiple algorithms
+    \item \textbf{Interface Module}: Orchestrates the flow of information from the task and environment modules to the external modules. It also provides an interface for a centralized logging system that allow comparison between multiple algorithms
     \item \texttt{RTPlayground} focuses on Markov decision processes (MDP), defined with a 4-tuple $(S, A, T, R)$ where $S$ and $A$ are sets of states and actions, $T$ is the transition probability, and $R$ is the reward function. The following components enables the development of various MDPs for training and testing:
         \begin{itemize}[nolistsep]
             \item \textbf{Task Module}: Configure and output the reward function $r = R(s,a)$, task termination criteria $d = f_{\text{done}}(s,a)$, and initial state probabilities $s_0 \sim S_0$.
