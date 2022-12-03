@@ -41,10 +41,42 @@ class Interface:
         return self.env.reset()
 
     def render(self):
-        self.env.render()
+        return self.env.render()
 
     def close(self):
         self.env.close()
 
     def log(self, key, value):
         pass
+
+    def inspect(self, who, what):
+        '''
+        Get the list of arguments
+        https://stackoverflow.com/questions/582056/getting-list-of-parameter-names-inside-python-function
+        '''
+        if hasattr(self, who):
+            obj = getattr(self, who)
+        else:
+            warnings.warn(f"[w] cannot find({who}).", RuntimeWarning)
+        if hasattr(self, who):
+            class_method = getattr(obj, what)
+        else:
+            warnings.warn(f"[w] cannot find({what}).", RuntimeWarning)
+        return class_method.__code__.co_varnames
+        
+    def query(self, who, what, *argument):
+        '''
+        Execute the command 'what' from object 'who', which accept a set of arguments.
+        i.e. query('env','log','mykey',123)
+        '''
+        if hasattr(self, who):
+            obj = getattr(self, who)
+        else:
+            warnings.warn(f"[w] cannot find({who}).", RuntimeWarning)
+        if hasattr(self, who):
+            class_method = getattr(obj, what)
+        else:
+            warnings.warn(f"[w] cannot find({what}).", RuntimeWarning)
+        result = class_method(*argument)
+        return result
+        

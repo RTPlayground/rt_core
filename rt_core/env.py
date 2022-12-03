@@ -6,7 +6,7 @@ class Env(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def reset(self, action):
+    def reset(self): #,action  # Preserved the interface format
         pass
 
     def close(self):
