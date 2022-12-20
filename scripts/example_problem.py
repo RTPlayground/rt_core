@@ -34,14 +34,14 @@ class GoRight(Task):
         else:
             return -0.1
 
-int = Interface(env = ThreeBlock(), task = GoRight())
+interface = Interface(env = ThreeBlock(), task = GoRight())
 
-state = int.reset()
+state = interface.reset()
 done = False
 print("==================")
 while not done:
     action = random.randint(-1,1)
-    state, reward, done = int.step(action)
+    state, reward, done = interface.step(action)
     print("action:", action)
     print("state:", state)
     print("reward:", reward)
