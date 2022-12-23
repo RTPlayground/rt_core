@@ -38,7 +38,7 @@ setup(
     license='MIT',
     zip_safe=True,
     include_package_data=True,
-    packages=['rt_core'],
+    packages=find_packages(),
     scripts=[],
     url="https://github.com/RTPlayground/rt_core/",
     install_requires=requirements,

@@ -35,6 +35,7 @@ interface.log() # centralized logger
 ```console
 git clone https://github.com/RTPlayground/rt_core
 cd rt_core
+pip3 install wheel
 pip3 install .
 ```
 
