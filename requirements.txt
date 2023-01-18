@@ -1,2 +1,6 @@
-wheel
+pyyaml
+numpy
+rich
 wandb
+tensorboard
+torchtyping

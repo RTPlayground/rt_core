@@ -36,6 +36,7 @@ interface.log() # centralized logger
 git clone https://github.com/RTPlayground/rt_core
 cd rt_core
 pip3 install wheel
+install torch manually -> https://pytorch.org/get-started/locally/
 pip3 install .
 ```
 
