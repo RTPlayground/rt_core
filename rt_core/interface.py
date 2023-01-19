@@ -1,4 +1,3 @@
-import wandb
 import warnings
 
 class Interface:
